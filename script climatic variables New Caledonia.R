@@ -68,7 +68,6 @@ write.csv(climatemoue,file="temperatureMoue.csv",row.names=FALSE)
 
 ### Humidity
 
-?na.action
 
 moue <- mutate(moue, Year = year(DATE), Month = month(DATE))
 climatemoue <- aggregate(moue[21], list(moue$Month),na.rm=T,mean)
@@ -110,7 +109,7 @@ mouetemperature <- moue %>%
   geom_line() +
   scale_x_date(date_labels = "%y",date_breaks = "1 year") +
   ylim(17.5, 30)+
-  labs(y = "MMT(°C)") + theme_bw(base_size = 15)
+  labs(y = "MMT(Â°C)") + theme_bw(base_size = 15)
 
 mouehumidity <- moue %>%
   ggplot(aes(x = DATE, y = UMM)) +
@@ -146,7 +145,7 @@ rblanchetemperature <- rblanche %>%
   geom_line() +
   ylim(17.5, 30)+
   scale_x_date(date_labels = "%y",date_breaks = "1 year") +
-  labs(y = "MMT °C") + theme_bw(base_size = 15)
+  labs(y = "MMT Â°C") + theme_bw(base_size = 15)
 
 rblanchehumidity <- rblanche %>%
   ggplot(aes(x = DATE, y = UMM )) +
